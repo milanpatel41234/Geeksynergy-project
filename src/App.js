@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import NavBar from './Components/Header/NavBar';
+import { useState } from 'react';
+import Login from './Components/Pages/Login';
+import CreateAccount from './Components/Pages/CreateAccount';
+import HomePage from './Components/Pages/HomePage';
+
 
 function App() {
+  const [LoginState , setLoginState] = useState(false);
+  const setLogin =()=>{
+  setLoginState(true);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Routes>
+      <Route path='/signup' element={!LoginState ? <CreateAccount /> : <Navigate to='/' />} />
+      <Route path='/login' element={!LoginState ? <Login onLogin={setLogin} /> : <Navigate to='/' />} />
+      <Route path='/' element={LoginState ? <HomePage/> : <Navigate to='/login' />} />
+
+      </Routes>
     </div>
   );
 }

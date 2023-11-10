@@ -1,0 +1,49 @@
+.container{
+    width: 70vw;
+    margin: 3rem auto;
+    padding: 2rem;
+    color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .container li{
+    display: block;
+    width: 370px;
+    height: 350px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+  }
+  .card{
+    display: flex;
+  }
+  .card img{
+    height: 200px;
+    width: 150px;
+  }
+  .card h4{
+    margin: 5px;
+  }
+  .card p{
+    width: fit-content;
+    text-align: start;
+    margin: 3px;
+  }
+  .container button{
+    border: none;
+    background-color: rgb(35, 174, 37);
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    padding: .5rem;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 700px) {
+    .container{
+      width: 100vw;
+      box-sizing: border-box;
+      margin:3rem auto;
+      padding: 0.5rem;
+    }
+  }

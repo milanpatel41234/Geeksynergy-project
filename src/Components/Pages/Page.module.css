@@ -1,0 +1,33 @@
+.container{
+    width: 50vw;
+    margin: 7rem auto;
+    padding: 2rem;
+    color: grey;
+  }
+  
+  .actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .actions div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .actions div button{
+    border: none;
+  }
+  @media (max-width: 768px) {
+    .container{
+      width: 95vw;
+      box-sizing: border-box;
+      margin:7rem auto;
+    }
+   
+    .control {
+      align-items: center;
+      flex-direction: row;
+    }
+ 
+  }
