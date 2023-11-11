@@ -24,7 +24,6 @@ function HomePage() {
     try {
       const response = await fetch(apiUrl, requestData);
       const data = await response.json();
-      console.log(data.result);
       setListItems(data.result);
     } catch (error) {
       console.error("Error fetching movie list:", error);

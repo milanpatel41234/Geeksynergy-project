@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Style from "./NavBar.module.css";
 import Modal from "./InfoModal"; // Import the Modal component
 
-function NavBar() {
+function NavBar({LoginState}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -17,7 +17,7 @@ function NavBar() {
     <>
       <header className={Style.navbar}>
         <h2>Geeksynergy</h2>
-        <button onClick={openModal}>Company Info</button>
+       {LoginState && <button onClick={openModal}>Company Info</button>}
       </header>
 
       {isModalOpen && (

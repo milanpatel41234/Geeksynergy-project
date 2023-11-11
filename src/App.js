@@ -14,7 +14,7 @@ function App() {
   }
   return (
     <div className="App">
-      <NavBar />
+      <NavBar LoginState={LoginState} />
       <Routes>
       <Route path='/signup' element={!LoginState ? <CreateAccount /> : <Navigate to='/' />} />
       <Route path='/login' element={!LoginState ? <Login onLogin={setLogin} /> : <Navigate to='/' />} />
